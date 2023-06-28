@@ -48,7 +48,7 @@ async def main():
         await sequencer.play_note(note, timedelta(seconds=1))
 
         while True:
-            inp = input("请输入音名: ").strip().upper()
+            inp = input("请输入音名: ").strip()
             if notes.is_valid_note(inp):
                 break
             print(
