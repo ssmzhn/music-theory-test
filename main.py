@@ -30,7 +30,7 @@ class Sequencer:
         self.sequencer.stop_NoteContainer(container)
 
 
-async def main():
+async def main() -> None:
     sequencer = Sequencer("Wii Grand Piano.sf2")
     test_chore = [Note("C", 5), Note("E", 5), Note("G", 5)]
     await sequencer.play_notes(test_chore, timedelta(seconds=1))
