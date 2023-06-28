@@ -6,7 +6,7 @@ A simple music theory test.
 If you haven't installed `mingus` and `fluidsynth`, then you should install them via:
 
 ``` 
-pip install mingus fluidsynth
+pip install -r requirements.txt
 ```
 
 Then
