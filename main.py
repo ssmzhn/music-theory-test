@@ -33,7 +33,7 @@ async def single_note():
                 "格式: 音名 + 升降号 (如降 B 请输入 Bb, 升 F 请输入 F#. 注意, 音名必须大写)"
             )
 
-        print("正确! " if inp == note.name else f"错误! 正确答案是 {note.name}")
+        print("正确! " if notes.note_to_int(inp) == int(note)%12 else f"错误! 正确答案是 {note.name}")
 
 async def chord_test(standard_note: bool=True) -> None:
     print('听和弦, 然后写出和弦名')
