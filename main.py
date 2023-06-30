@@ -38,10 +38,10 @@ async def single_note():
 async def chord_test(standard_note: bool=True) -> None:
     print('听和弦, 然后写出和弦名')
     sequencer = Sequencer("Wii Grand Piano.sf2")
-    test_chore = [Note("C", 4), Note("E", 4), Note("G", 4)]
-    for _ in range(2):
-        await sequencer.play_texture(test_chore)
-    await sequencer.play_notes(test_chore, timedelta(seconds=1))
+    test_chore = [Note("C", 4), Note("E", 4), Note("G", 4), Note("C", 5)]
+    for x in ('F','G','Em','Am','Dm7','G7','C'):
+        await sequencer.play_texture([Note(i) for i in chords.from_shorthand(x)])
+    await sequencer.play_notes(test_chore,timedelta(seconds=1))
     while True:
         if standard_note:
             print("请聆听标准音 A-4 (440 Hz)")
@@ -94,4 +94,4 @@ if __name__ == "__main__":
             asyncio.run(chord_test())
             break
         else:
-            print("输入格式有误!\n")
+            print("输入格式有误!")
