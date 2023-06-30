@@ -94,7 +94,4 @@ if __name__ == "__main__":
             asyncio.run(chord_test())
             break
         else:
-            print(
-                "输入格式有误!\n"
-                "格式: 音名 + 升降号 (如降 B 请输入 Bb, 升 F 请输入 F#. 注意, 音名必须大写)"
-            )
+            print("输入格式有误!\n")
