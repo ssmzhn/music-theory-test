@@ -57,7 +57,7 @@ async def chord_test(standard_note: bool=True) -> None:
             "dim": (0, 3, 6),
             "aug": (0, 4, 8),
             "maj7": (0, 4, 7, 11),
-            "min7": (0, 3, 7, 10),
+            "m7": (0, 3, 7, 10),
             "7": (0, 4, 7, 10),
             "dim7": (0, 3, 6, 9),
             "m7b5": (0, 3, 6, 10)
