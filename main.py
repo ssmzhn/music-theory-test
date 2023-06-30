@@ -49,13 +49,18 @@ async def chord_test(standard_note: bool=True) -> None:
                 await sequencer.play_note(Note("A", 4), timedelta(seconds=0.5))
                 await asyncio.sleep(0.5)
         base_note = Note()
-        pitch = random.randint(48 - 12, 48 + 12)
+        pitch = random.randint(48 - 12, 48)
         base_note.from_int(pitch)
         list_of_chord_pitch_delta = { # 不用 chords 是因为我觉得 chords 不好写织体 (x
             "maj": (0, 4, 7),
             "m": (0, 3, 7),
             "dim": (0, 3, 6),
-            "aug": (0, 4, 8)
+            "aug": (0, 4, 8),
+            "maj7": (0, 4, 7, 11),
+            "min7": (0, 3, 7, 10),
+            "7": (0, 4, 7, 10),
+            "dim7": (0, 3, 6, 9),
+            "m7b5": (0, 3, 6, 10)
         }
         chord_type, chord_pitch_delta = random.sample(list(list_of_chord_pitch_delta.items()),1)[0]
         chord = [Note().from_int(pitch+i) for i in chord_pitch_delta]
