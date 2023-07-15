@@ -25,7 +25,9 @@ async def single_note():
         await sequencer.play_note(note, timedelta(seconds=1))
 
         while True:
-            inp = input("请输入音名: ").strip()
+            inp = input("请输入音名 (按 Q 退出): ").strip()
+            if inp in ("q","Q"):
+                return
             if notes.is_valid_note(inp):
                 break
             print(
@@ -67,7 +69,9 @@ async def chord_test(standard_note: bool=True) -> None:
         await sequencer.play_notes(chord, timedelta(seconds=1))
 
         while True:
-            inp = input("请输入和弦: ").strip()
+            inp = input("请输入和弦 (按 Q 结束): ").strip()
+            if inp in ("Q","q"):
+                return
             try:
                 chords.from_shorthand(inp)
             except:

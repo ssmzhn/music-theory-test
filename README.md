@@ -19,6 +19,8 @@ Enjoy it!
 
 ## For Windows Users
 
+First install FluidSynth library from [here](https://github.com/FluidSynth/fluidsynth/releases).
+
 If this error occurs:
 
 ```
